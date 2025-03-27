@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.page {
+    display: none;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.page.active {
+    display: block;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.category-list button {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-list button i {
+    margin-right: 10px;
+}
+
+.category-list button:hover {
+    background-color: #0056b3;
+}
+
+.custom-btn {
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: #138496;
+}
+
+.custom-form {
+    margin-top: 20px;
+}
+
+.custom-form h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.custom-form label {
+    display: block;
+    margin: 5px 0;
+}
+
+.custom-form select, .custom-form button {
+    padding: 8px;
+    margin: 5px 0;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.leaderboard-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.leaderboard-btn:hover {
+    background-color: #218838;
+}
+
+.progress {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.timer-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#timer-progress {
+    width: 100%;
+    height: 100%;
+    background-color: #28a745;
+    transition: width 1s linear;
+}
+
+#timer-progress.warning {
+    background-color: #ff9800;
+}
+
+#question-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.options .option-btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #343a40; 
+    color: white; 
+    border: 1px solid #2c3136; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options .option-btn:hover {
+    background-color: #495057;
+}
+
+.score {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#final-score, #correct-answers {
+    color: #007bff;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.save-score {
+    margin: 20px 0;
+}
+
+#player-name {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+#player-name:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+#leaderboard-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#leaderboard-list li {
+    padding: 8px;
+    background-color: #f8f9fa;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button, .custom-form select {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #player-name {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    #leaderboard-list li {
+        font-size: 14px;
+    }
+}

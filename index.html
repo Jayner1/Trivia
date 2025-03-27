@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Main Menu Section -->
+    <section id="main-menu" class="page active">
+        <h1>Quiz Game</h1>
+        <div class="category-list">
+            <button onclick="startQuiz('general', 'easy')"><i class="fas fa-book"></i> General Knowledge</button>
+            <button onclick="startQuiz('science', 'easy')"><i class="fas fa-flask"></i> Science & Nature</button>
+            <button onclick="startQuiz('entertainment', 'easy')"><i class="fas fa-film"></i> Entertainment</button>
+            <button onclick="startQuiz('history', 'easy')"><i class="fas fa-landmark"></i> History</button>
+            <button onclick="startQuiz('sports', 'easy')"><i class="fas fa-futbol"></i> Sports</button>
+        </div>
+        <button class="custom-btn" onclick="showCustomForm()">Custom Quiz</button>
+        <div id="custom-form" class="custom-form" style="display: none;">
+            <h2>Create Your Quiz</h2>
+            <label for="custom-category">Category:</label>
+            <select id="custom-category">
+                <option value="general">General Knowledge</option>
+                <option value="science">Science & Nature</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="history">History</option>
+                <option value="sports">Sports</option>
+            </select>
+            <label for="custom-difficulty">Difficulty:</label>
+            <select id="custom-difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button onclick="startCustomQuiz()">Start Custom Quiz</button>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn">View Leaderboard</a>
+    </section>
+
+    <!-- Question View Section -->
+    <section id="question-view" class="page">
+        <h1>Quiz Time!</h1>
+        <div class="progress">Question <span id="question-number">1</span>/10</div>
+        <div class="timer-bar"><div id="timer-progress"></div></div>
+        <p id="question-text">Placeholder question goes here...</p>
+        <div class="options">
+            <button class="option-btn">Option 1</button>
+            <button class="option-btn">Option 2</button>
+            <button class="option-btn">Option 3</button>
+            <button class="option-btn">Option 4</button>
+        </div>
+        <div class="score">Score: <span id="current-score">0</span></div>
+        <button onclick="showResults()">End Quiz</button>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="page">
+        <h1>Results</h1>
+        <p>Your Score: <span id="final-score">0</span></p>
+        <p>Correct Answers: <span id="correct-answers">0</span>/10</p>
+        <div class="save-score">
+            <input type="text" id="player-name" placeholder="Enter your name" maxlength="20">
+            <button onclick="saveScore()">Save to Leaderboard</button>
+        </div>
+        <button onclick="backToMenu()">Play Again</button>
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard-list"></ul>
+    </section>
+
+    <!-- Audio for ticking sound -->
+    <audio id="tick-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3" preload="auto"></audio>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
